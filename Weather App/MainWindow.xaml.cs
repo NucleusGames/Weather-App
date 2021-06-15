@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 
 namespace Weather_App
 {
@@ -28,6 +29,7 @@ namespace Weather_App
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             uscWea1.setImg(new BitmapImage(new Uri("pack://application:,,,/Icons/cloudy.png")));
+            uscWea2.setImg(new BitmapImage(new Uri("pack://application:,,,/Icons/lightning_cloud.png")));
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
