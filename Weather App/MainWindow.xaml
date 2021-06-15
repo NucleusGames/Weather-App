@@ -257,7 +257,7 @@
                Height="40"
                Margin="-15,0,0,70"
                FontFamily="Font/#Hello_Avocado"
-               Foreground="#1b61d1"
+               Foreground="#0c2563"
                x:Name="lblOneDay">
             <Label.RenderTransform>
                 <TranslateTransform/>
@@ -291,16 +291,16 @@
                     Storyboard.TargetProperty="(Image.Opacity)"
                     From="0"
                     To="1"
-                    Duration="0:0:0.8"/>
+                    Duration="0:0:1"/>
                 <DoubleAnimation
                     Storyboard.TargetName="imgNow"
                     Storyboard.TargetProperty="(Image.RenderTransform).(TranslateTransform.X)"
-                    By="15" Duration="0:0:0.8">
+                    By="15" Duration="0:0:1">
                 </DoubleAnimation>
                 <DoubleAnimation
                     Storyboard.TargetName="imgNow"
                     Storyboard.TargetProperty="(Image.RenderTransform).(TranslateTransform.Y)"
-                    By="-15" Duration="0:0:0.8">
+                    By="-15" Duration="0:0:1">
                 </DoubleAnimation>
             </Storyboard>
 
@@ -308,19 +308,19 @@
                 <DoubleAnimation
                     Storyboard.TargetName="lblTempNow"
                     Storyboard.TargetProperty="(Label.RenderTransform).(TranslateTransform.X)"
-                    By="15" Duration="0:0:0.8">
+                    By="15" Duration="0:0:1">
                 </DoubleAnimation>
                 <DoubleAnimation
                     Storyboard.TargetName="lblTempNow"
                     Storyboard.TargetProperty="(Label.RenderTransform).(TranslateTransform.Y)"
-                    By="-15" Duration="0:0:0.8">
+                    By="-15" Duration="0:0:1">
                 </DoubleAnimation>
                 <DoubleAnimation
                     Storyboard.TargetName="lblTempNow"
                     Storyboard.TargetProperty="(Label.Opacity)"
                     From="0"
                     To="1"
-                    Duration="0:0:0.8">
+                    Duration="0:0:1">
                 </DoubleAnimation>
             </Storyboard>
 
@@ -328,14 +328,19 @@
                 <DoubleAnimation
                     Storyboard.TargetName="lblOneDay"
                     Storyboard.TargetProperty="(Label.RenderTransform).(TranslateTransform.X)"
-                    By="25" Duration="0:0:0.8">
+                    By="25" Duration="0:0:1">
                 </DoubleAnimation>
                 <DoubleAnimation
                     Storyboard.TargetName="lblOneDay"
                     Storyboard.TargetProperty="(Label.Opacity)"
                     By="100"
-                    Duration="0:0:0.8">
+                    Duration="0:0:1">
                 </DoubleAnimation>
+                <ColorAnimation
+                    To="#27ace6"
+                    Duration="0:0:0:1"
+                    Storyboard.TargetName="lblOneDay"
+                    Storyboard.TargetProperty="Foreground.Color"/>
             </Storyboard>
         </Grid.Resources>
 
