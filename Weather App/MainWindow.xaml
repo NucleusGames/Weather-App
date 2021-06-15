@@ -200,21 +200,33 @@
                 <Style TargetType="Button">
                     <Setter Property="Cursor" Value="Hand"/>
                     <Setter Property="Background" Value="#b00b0b"/>
-                    <Setter Property="BorderBrush" Value="#070529"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#570303"/>
-                        </Trigger>
-                    </Style.Triggers>
+                    <Setter Property="BorderBrush" Value="#070529"/>                    
                 </Style>
             </Button.Style>
 
             <Button.Template>
                 <ControlTemplate TargetType="Button">
-                    <Border CornerRadius="6" Background="{TemplateBinding Background}">
+                    <Border x:Name="border" CornerRadius="6" Background="{TemplateBinding Background}">
                         <ContentPresenter VerticalAlignment="Center"
                                           HorizontalAlignment="Center"/>
                     </Border>
+                    
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="#5c0303" Duration="0:0:0:0.3" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="#b00b0b" Duration="0:0:0:0.3" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Button.Template>
         </Button>
