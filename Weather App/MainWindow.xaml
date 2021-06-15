@@ -173,7 +173,7 @@
                HorizontalAlignment="Center"
                Width="150"
                Height="150"
-               Margin="0,0,50,370"
+               Margin="0,0,15,385"
                Opacity="0">
             <Image.RenderTransform>
                 <TranslateTransform/>
@@ -187,7 +187,7 @@
                HorizontalAlignment="Center"
                VerticalAlignment="Center"
                Width="100"
-               Margin="0,50,50,170"
+               Margin="0,50,15,185"
                Foreground="White"
                HorizontalContentAlignment="Center"
                FontSize="18"
@@ -255,9 +255,14 @@
                Width="150"
                HorizontalContentAlignment="Center"
                Height="40"
-               Margin="10,0,0,70"
+               Margin="-15,0,0,70"
                FontFamily="Font/#Hello_Avocado"
-               Foreground="#1b61d1"/>
+               Foreground="#1b61d1"
+               x:Name="lblOneDay">
+            <Label.RenderTransform>
+                <TranslateTransform/>
+            </Label.RenderTransform>
+        </Label>
 
         <local:uscDay x:Name="uscWea1"
                       Grid.Column="1"
@@ -285,17 +290,17 @@
                     Storyboard.TargetName="imgNow"
                     Storyboard.TargetProperty="(Image.Opacity)"
                     From="0"
-                    To="100"
-                    Duration="0:0:8"/>
+                    To="1"
+                    Duration="0:0:0.8"/>
                 <DoubleAnimation
                     Storyboard.TargetName="imgNow"
                     Storyboard.TargetProperty="(Image.RenderTransform).(TranslateTransform.X)"
-                    By="50" Duration="0:0:0.5">
+                    By="15" Duration="0:0:0.8">
                 </DoubleAnimation>
                 <DoubleAnimation
                     Storyboard.TargetName="imgNow"
                     Storyboard.TargetProperty="(Image.RenderTransform).(TranslateTransform.Y)"
-                    By="-30" Duration="0:0:0.5">
+                    By="-15" Duration="0:0:0.8">
                 </DoubleAnimation>
             </Storyboard>
 
@@ -303,18 +308,33 @@
                 <DoubleAnimation
                     Storyboard.TargetName="lblTempNow"
                     Storyboard.TargetProperty="(Label.RenderTransform).(TranslateTransform.X)"
-                    By="50" Duration="0:0:0.5">
+                    By="15" Duration="0:0:0.8">
                 </DoubleAnimation>
                 <DoubleAnimation
                     Storyboard.TargetName="lblTempNow"
                     Storyboard.TargetProperty="(Label.RenderTransform).(TranslateTransform.Y)"
-                    By="-30" Duration="0:0:0.5">
+                    By="-15" Duration="0:0:0.8">
                 </DoubleAnimation>
                 <DoubleAnimation
                     Storyboard.TargetName="lblTempNow"
-                    Storyboard.TargetProperty="Opacity"
+                    Storyboard.TargetProperty="(Label.Opacity)"
+                    From="0"
+                    To="1"
+                    Duration="0:0:0.8">
+                </DoubleAnimation>
+            </Storyboard>
+
+            <Storyboard x:Key="TransformLabelDay">
+                <DoubleAnimation
+                    Storyboard.TargetName="lblOneDay"
+                    Storyboard.TargetProperty="(Label.RenderTransform).(TranslateTransform.X)"
+                    By="25" Duration="0:0:0.8">
+                </DoubleAnimation>
+                <DoubleAnimation
+                    Storyboard.TargetName="lblOneDay"
+                    Storyboard.TargetProperty="(Label.Opacity)"
                     By="100"
-                    Duration="0:0:0.5">
+                    Duration="0:0:0.8">
                 </DoubleAnimation>
             </Storyboard>
         </Grid.Resources>
@@ -323,6 +343,7 @@
             <EventTrigger RoutedEvent="Loaded">
                 <BeginStoryboard Storyboard="{StaticResource TransformImage}"/>
                 <BeginStoryboard Storyboard="{StaticResource TransformLabel}"/>
+                <BeginStoryboard Storyboard="{StaticResource TransformLabelDay}"/>
             </EventTrigger>
         </Grid.Triggers>
     </Grid>
